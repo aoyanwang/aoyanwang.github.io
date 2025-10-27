@@ -1,62 +1,194 @@
-
 /* style.css - Blue-White Academic Style for Aoyan Wang Portfolio */
-:root{
-  --blue:#2b6cb0;
-  --light-blue:#63b3ed;
-  --muted:#718096;
-  --bg:#f8fafc;
-  --card:#ffffff;
+:root {
+  --blue: #2b6cb0;
+  --light-blue: #63b3ed;
+  --muted: #718096;
+  --bg: #f8fafc;
+  --card: #ffffff;
 }
 
-*{box-sizing:border-box}
-body{
+* { box-sizing: border-box; }
+
+body {
   font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
-  margin:0; background:var(--bg); color:#1a202c; line-height:1.6;
+  margin: 0;
+  background: var(--bg);
+  color: #1a202c;
+  line-height: 1.6;
 }
-.container{width:90%; max-width:980px; margin:0 auto; padding:2rem 0;}
-.header{background:linear-gradient(135deg,var(--blue),var(--light-blue)); color:white; padding:2rem 0; text-align:center; border-bottom:4px solid rgba(0,0,0,0.06)}
-.header h1{margin:0; font-size:1.6rem; font-weight:700}
-.header p{margin:6px 0 0; opacity:0.95}
 
-.toc{display:flex; gap:0.6rem; justify-content:center; flex-wrap:wrap; margin:1.4rem 0}
-.toc a{background:#edf2f7; padding:0.5rem 0.9rem; border-radius:8px; color:var(--blue); font-weight:600; text-decoration:none}
-.toc a:hover{background:var(--blue); color:white}
+/* ---------- Compact Header Three-Part Layout ---------- */
+.header {
+  background: linear-gradient(135deg, var(--blue), var(--light-blue));
+  color: white;
+  padding: 0 0;
+  border-bottom: 3px solid rgba(0, 0, 0, 0.05);
+}
+.page-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 90%;
+  max-width: 980px;
+  margin: auto  ; gap: 20px;
+}
+.header-left img {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid rgba(255, 255, 255, 0.6);
+}
+.header-center {
+  flex-grow: 1;
+  text-align: center;
+  padding: 0 0;
+}
+.header-center h1 {
+  margin: 0;
+  font-size: 1.4rem;
+  font-weight: 700;
+}
+.header-center p {
+  margin: 0cm 0 0;
+  font-size: 0.95rem;
+  opacity: 0.95;
+}
+.header-right {
+  text-align: right;
+  font-size: 0.9rem;
+  line-height: 1.3;
+  color: #fefefe;
+}
+.header-right strong {
+  display: block;
+  font-weight: 600;
+}
+.header-right a {
+  color: white;
+  text-decoration: none;
+  font-weight: 500;
+}
+.header-right a:hover {
+  text-decoration: underline;
+}
 
-.section{background:var(--card); padding:1.2rem 1.4rem; border-radius:10px; box-shadow:0 4px 18px rgba(11,23,39,0.04); margin-bottom:1.4rem}
-.section-title{font-size:1.25rem; font-weight:700; border-left:4px solid var(--blue); padding-left:0.9rem; margin-bottom:0.6rem}
+/* ---------- Main Container & Section Spacing ---------- */
+.container {
+  width: 90%;
+  max-width: 980px;
+  margin: 0 auto;
+  padding: 0 0; /* 原2rem → 更紧凑 */
+}
 
-.highlight{font-weight:700; color:var(--blue)}
+.section {
+  background: var(--card);
+  padding: 0 0; /* 原1.2rem → 紧凑 */
+  border-radius: 10px;
+  box-shadow: 0 4px 18px rgba(11, 23, 39, 0.04);
+  margin-bottom: 0cm; /* 原1.4rem → 紧凑 */
+}
 
-.details-link summary{cursor:pointer; font-weight:600; color:var(--blue); margin-top:0.6rem}
-.detail-content{background:#f7fbff; padding:0.9rem; border-left:4px solid var(--blue); margin-top:0.6rem; border-radius:8px}
+.section-title {
+  font-size: 1.25rem;
+  font-weight: 700;
+  border-left: 4px solid var(--blue);
+  padding-left: 0cm;
+  margin-bottom: 0cm;
+}
 
-.button-link{display:inline-block; background:#e6eef9; padding:0.5rem 0.9rem; border-radius:8px; margin-top:0.6rem; font-weight:600; color:var(--blue); text-decoration:none}
-.primary-button{background:var(--blue); color:white}
+.highlight {
+  font-weight: 700;
+  color: var(--blue);
+}
 
-.project-grid, .image-grid{display:grid; grid-template-columns:repeat(4,1fr); gap:0.6rem}
-.project-item, .img-item{background:#f1f5f9; padding:0.6rem; border-radius:8px; text-align:center}
-.img-item img{max-width:100%; height:150px; object-fit:cover; border-radius:6px}
+.details-link summary {
+  cursor: pointer;
+  font-weight: 600;
+  color: var(--blue);
+  margin-top: 0cm;
+}
+.detail-content {
+  background: #f7fbff;
+  padding: 0m;
+  border-left: 4px solid var(--blue);
+  margin-top: 0cm;
+  border-radius: 8px;
+}
 
-.contact-section{ text-align:center }
+.button-link {
+  display: inline-block;
+  background: #e6eef9;
+  padding: 0cm 0cm;
+  border-radius: 8px;
+  margin-top: 0cm;
+  font-weight: 600;
+  color: var(--blue);
+  text-decoration: none;
+}
+.primary-button { background: var(--blue); color: white; }
 
-.footer{background:#2d3748; color:white; text-align:center; padding:1rem; margin-top:1.6rem}
+.project-grid, .image-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0.6rem;
+}
+.project-item, .img-item {
+  background: #f1f5f9;
+  padding: 0cm;
+  border-radius: 8px;
+  text-align: center;
+}
+.img-item img {
+  max-width: 100%;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 6px;
+}
 
-.page-header{display:flex; justify-content:space-between; align-items:center; gap:1rem; margin-bottom:1rem}
-.back-home{background:#edf2f7; padding:0.5rem 0.8rem; border-radius:8px; color:var(--blue); text-decoration:none; font-weight:600}
+.contact-section { text-align: center; }
 
-@media(max-width:900px){ .project-grid, .image-grid{grid-template-columns:repeat(2,1fr)} .img-item img{height:120px} }
-@media(max-width:480px){ .toc{flex-direction:column} .header h1{font-size:1.2rem} .project-grid, .image-grid{grid-template-columns:1fr} }
+.footer {
+  background: #2d3748;
+  color: white;
+  text-align: center;
+  padding: 0cm;
+  margin-top: ocm;
+}
 
-/* -------- Lightbox -------- */
+.page-header { margin-bottom: ocm; }
+.back-home {
+  background: #edf2f7;
+  padding: 0 0;
+  border-radius: 8px;
+  color: var(--blue);
+  text-decoration: none;
+  font-weight: 600;
+}
+
+/* ---------- Responsive Tweaks ---------- */
+@media (max-width: 900px) {
+  .project-grid, .image-grid { grid-template-columns: repeat(2, 1fr); }
+  .img-item img { height: 120px; }
+  .header-left img { width: 60px; height: 60px; }
+  .header-center h1 { font-size: 1.2rem; }
+}
+@media (max-width: 480px) {
+  .project-grid, .image-grid { grid-template-columns: 1fr; }
+  .header-center p { font-size: 0.85rem; }
+  .header-right { font-size: 0.8rem; }
+}
+
+/* ---------- Lightbox ---------- */
 .lightbox {
   display: none;
   position: fixed;
   inset: 0;
   z-index: 9999;
-  background: rgba(0,0,0,0.8); /* 半透明背景，0.8 */
+  background: rgba(0, 0, 0, 0.8);
   justify-content: center;
   align-items: center;
-  padding: 2rem;
+  padding: 0;
 }
 .lightbox.active { display: flex; }
 .lightbox .lightbox-inner { max-width: 1100px; max-height: 90vh; }
@@ -64,7 +196,7 @@ body{
   max-width: 100%;
   max-height: 85vh;
   border-radius: 8px;
-  box-shadow: 0 10px 40px rgba(0,0,0,0.6);
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.6);
   background: #fff;
 }
 .lightbox-close {
@@ -73,21 +205,20 @@ body{
   right: 22px;
   font-size: 28px;
   color: #fff;
-  background: rgba(0,0,0,0.25);
+  background: rgba(0, 0, 0, 0.25);
   border: none;
   border-radius: 6px;
   padding: 4px 10px;
   cursor: pointer;
   z-index: 10010;
 }
-.lightbox-close:hover { background: rgba(0,0,0,0.45); }
-/* --- Lightbox navigation arrows --- */
-.lightbox-prev,
-.lightbox-next {
+.lightbox-close:hover { background: rgba(0, 0, 0, 0.45); }
+
+.lightbox-prev, .lightbox-next {
   position: fixed;
   top: 50%;
   transform: translateY(-50%);
-  font-size: 5rem; /* 比原来大约10倍 */
+  font-size: 5rem;
   color: white;
   background: rgba(0, 0, 0, 0.4);
   border: none;
@@ -97,26 +228,17 @@ body{
   cursor: pointer;
   z-index: 1001;
   transition: background 0.3s, transform 0.2s;
-  display: none; /* 默认隐藏，只有active时显示 */
+  display: none;
 }
-
 .lightbox.active .lightbox-prev,
 .lightbox.active .lightbox-next {
   display: flex;
   align-items: center;
   justify-content: center;
 }
-
-.lightbox-prev:hover,
-.lightbox-next:hover {
+.lightbox-prev:hover, .lightbox-next:hover {
   background: rgba(0, 0, 0, 0.7);
   transform: translateY(-50%) scale(1.1);
 }
-
-.lightbox-prev {
-  left: 20px;
-}
-
-.lightbox-next {
-  right: 20px;
-}
+.lightbox-prev { left: 20px; }
+.lightbox-next { right: 20px; }
